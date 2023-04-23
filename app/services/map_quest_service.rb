@@ -8,6 +8,7 @@ class MapQuestService
   end
 
   def self.get_coordinates(location)
+    # require 'pry'; binding.pry
     geocode(location)
   end
 
