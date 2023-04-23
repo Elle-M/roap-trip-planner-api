@@ -21,7 +21,6 @@ describe "Forecast API" do
     expect(forecast[:data]).to have_key(:attributes)
     expect(forecast[:data][:attributes]).to be_a(Hash)
     expect(forecast[:data][:attributes]).to have_key(:current_weather)
-    # require 'pry'; binding.pry
     expect(forecast[:data][:attributes][:current_weather]).to be_a(Hash)
     expect(forecast[:data][:attributes]).to have_key(:daily_weather)
     expect(forecast[:data][:attributes][:daily_weather]).to be_an(Array)

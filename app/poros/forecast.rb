@@ -9,8 +9,7 @@ class Forecast
     @id = nil
     @type = "forecast"
     @current_weather = CurrentWeather.new(location)
-    @daily_weather = DailyWeather.new(location)
-    @hourly_weather = HourlyWeather.new(location)
-    require 'pry'; binding.pry
+    @daily_weather = [DailyWeather.new(location)]
+    @hourly_weather = [HourlyWeather.new(location)]
   end
 end

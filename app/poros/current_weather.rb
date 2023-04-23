@@ -9,7 +9,6 @@ class CurrentWeather
               :icon
 
   def initialize(location)
-    # require 'pry'; binding.pry
     @datetime = location[:localtime]
     @temperature = location[:current][:temp_f]
     @feels_like = location[:current][:feelslike_f]
