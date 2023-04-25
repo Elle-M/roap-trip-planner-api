@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Activity PORO", :vcr do
   it "exists and has attributes" do
     location = "denver,co"
-    forecast = ForecastFacade.current_weather(location)
+    forecast = ActivityFacade.current_weather(location)
 
     activity = Activity.new(location, forecast)
     # require 'pry'; binding.pry

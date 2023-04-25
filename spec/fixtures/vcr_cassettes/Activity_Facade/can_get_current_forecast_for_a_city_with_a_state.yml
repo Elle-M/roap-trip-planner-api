@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 25 Apr 2023 17:05:31 GMT
+      - Tue, 25 Apr 2023 16:56:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,17 +29,17 @@ http_interactions:
       X-Ratelimit-Limit-2628000:
       - '15000'
       X-Ratelimit-Remaining-2628000:
-      - '14815'
+      - '14817'
       Ratelimit-Limit:
       - '15000'
       Ratelimit-Remaining:
-      - '14815'
+      - '14817'
       Ratelimit-Reset:
-      - '2105669'
+      - '2106230'
       X-Powered-By:
       - MapQuest
       X-Request-Id:
-      - 62e3f7e0-e38b-11ed-a0b9-6d1d3da92891
+      - 143eded0-e38a-11ed-a0b9-6d1d3da92891
       Access-Control-Allow-Origin:
       - "*"
       X-Transaction-Count:
@@ -50,7 +50,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiJkZW52ZXIsY28ifSwibG9jYXRpb25zIjpbeyJzdHJlZXQiOiIiLCJhZG1pbkFyZWE2IjoiIiwiYWRtaW5BcmVhNlR5cGUiOiJOZWlnaGJvcmhvb2QiLCJhZG1pbkFyZWE1IjoiRGVudmVyIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiYWRtaW5BcmVhNCI6IkRlbnZlciIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwiYWRtaW5BcmVhMyI6IkNPIiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsInBvc3RhbENvZGUiOiIiLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJBNVhBWCIsImdlb2NvZGVRdWFsaXR5IjoiQ0lUWSIsImRyYWdQb2ludCI6ZmFsc2UsInNpZGVPZlN0cmVldCI6Ik4iLCJsaW5rSWQiOiIwIiwidW5rbm93bklucHV0IjoiIiwidHlwZSI6InMiLCJsYXRMbmciOnsibGF0IjozOS43NDAwMSwibG5nIjotMTA0Ljk5MjAyfSwiZGlzcGxheUxhdExuZyI6eyJsYXQiOjM5Ljc0MDAxLCJsbmciOi0xMDQuOTkyMDJ9LCJtYXBVcmwiOiIifV19XX0=
-  recorded_at: Tue, 25 Apr 2023 17:05:32 GMT
+  recorded_at: Tue, 25 Apr 2023 16:56:10 GMT
 - request:
     method: get
     uri: https://api.weatherapi.com/v1/forecast.json?days=5&key=0f7e814f89524e1fb17154705232304&q=39.74001,-104.99202
@@ -70,7 +70,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 25 Apr 2023 17:05:32 GMT
+      - Tue, 25 Apr 2023 16:56:11 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -80,7 +80,7 @@ http_interactions:
       Vary:
       - Accept-Encoding
       Server:
-      - BunnyCDN-IL1-1029
+      - BunnyCDN-IL1-1068
       Cdn-Pullzone:
       - '93447'
       Cdn-Uid:
@@ -96,22 +96,22 @@ http_interactions:
       Cdn-Requestpullcode:
       - '200'
       Cdn-Cachedat:
-      - 04/25/2023 17:05:32
+      - 04/25/2023 16:56:11
       Cdn-Edgestorageid:
       - '894'
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - 4af85149d6ec0100059892f52143f771
+      - dc6dba3121e45ae4c21ab6548a1034af
       Cdn-Cache:
       - EXPIRED
     body:
       encoding: ASCII-8BIT
       string: '{"location":{"name":"Denver","region":"Colorado","country":"United
-        States of America","lat":39.74,"lon":-104.99,"tz_id":"America/Denver","localtime_epoch":1682442332,"localtime":"2023-04-25
-        11:05"},"current":{"last_updated_epoch":1682442000,"last_updated":"2023-04-25
-        11:00","temp_c":11.9,"temp_f":53.4,"is_day":1,"condition":{"text":"Partly
-        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/day/116.png","code":1003},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":9,"wind_dir":"N","pressure_mb":1010.0,"pressure_in":29.81,"precip_mm":0.0,"precip_in":0.0,"humidity":48,"cloud":50,"feelslike_c":10.7,"feelslike_f":51.3,"vis_km":16.0,"vis_miles":9.0,"uv":3.0,"gust_mph":8.1,"gust_kph":13.0},"forecast":{"forecastday":[{"date":"2023-04-25","date_epoch":1682380800,"day":{"maxtemp_c":15.9,"maxtemp_f":60.6,"mintemp_c":3.9,"mintemp_f":39.0,"avgtemp_c":9.4,"avgtemp_f":49.0,"maxwind_mph":19.0,"maxwind_kph":30.6,"totalprecip_mm":4.9,"totalprecip_in":0.19,"totalsnow_cm":0.0,"avgvis_km":9.4,"avgvis_miles":5.0,"avghumidity":67.0,"daily_will_it_rain":1,"daily_chance_of_rain":88,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Patchy
+        States of America","lat":39.74,"lon":-104.99,"tz_id":"America/Denver","localtime_epoch":1682441770,"localtime":"2023-04-25
+        10:56"},"current":{"last_updated_epoch":1682441100,"last_updated":"2023-04-25
+        10:45","temp_c":11.9,"temp_f":53.4,"is_day":1,"condition":{"text":"Partly
+        cloudy","icon":"//cdn.weatherapi.com/weather/64x64/day/116.png","code":1003},"wind_mph":2.2,"wind_kph":3.6,"wind_degree":353,"wind_dir":"N","pressure_mb":1010.0,"pressure_in":29.81,"precip_mm":0.0,"precip_in":0.0,"humidity":48,"cloud":50,"feelslike_c":10.8,"feelslike_f":51.4,"vis_km":16.0,"vis_miles":9.0,"uv":4.0,"gust_mph":7.8,"gust_kph":12.6},"forecast":{"forecastday":[{"date":"2023-04-25","date_epoch":1682380800,"day":{"maxtemp_c":15.9,"maxtemp_f":60.6,"mintemp_c":3.9,"mintemp_f":39.0,"avgtemp_c":9.4,"avgtemp_f":49.0,"maxwind_mph":19.0,"maxwind_kph":30.6,"totalprecip_mm":4.9,"totalprecip_in":0.19,"totalsnow_cm":0.0,"avgvis_km":9.4,"avgvis_miles":5.0,"avghumidity":67.0,"daily_will_it_rain":1,"daily_chance_of_rain":88,"daily_will_it_snow":0,"daily_chance_of_snow":0,"condition":{"text":"Patchy
         rain possible","icon":"//cdn.weatherapi.com/weather/64x64/day/176.png","code":1063},"uv":2.0},"astro":{"sunrise":"06:08
         AM","sunset":"07:48 PM","moonrise":"09:51 AM","moonset":"12:59 AM","moon_phase":"Waxing
         Crescent","moon_illumination":"24"},"hour":[{"time_epoch":1682402400,"time":"2023-04-25
@@ -265,5 +265,5 @@ http_interactions:
         21:00","temp_c":15.7,"temp_f":60.3,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":5.1,"wind_kph":8.3,"wind_degree":105,"wind_dir":"ESE","pressure_mb":1013.0,"pressure_in":29.91,"precip_mm":0.0,"precip_in":0.0,"humidity":33,"cloud":2,"feelslike_c":15.7,"feelslike_f":60.3,"windchill_c":15.7,"windchill_f":60.3,"heatindex_c":15.7,"heatindex_f":60.3,"dewpoint_c":-0.5,"dewpoint_f":31.1,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":8.7,"gust_kph":14.0,"uv":1.0},{"time_epoch":1682827200,"time":"2023-04-29
         22:00","temp_c":14.7,"temp_f":58.5,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":4.7,"wind_kph":7.6,"wind_degree":149,"wind_dir":"SSE","pressure_mb":1013.0,"pressure_in":29.91,"precip_mm":0.0,"precip_in":0.0,"humidity":36,"cloud":3,"feelslike_c":14.7,"feelslike_f":58.5,"windchill_c":14.7,"windchill_f":58.5,"heatindex_c":14.7,"heatindex_f":58.5,"dewpoint_c":-0.2,"dewpoint_f":31.6,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":8.1,"gust_kph":13.0,"uv":1.0},{"time_epoch":1682830800,"time":"2023-04-29
         23:00","temp_c":13.7,"temp_f":56.7,"is_day":0,"condition":{"text":"Clear","icon":"//cdn.weatherapi.com/weather/64x64/night/113.png","code":1000},"wind_mph":4.3,"wind_kph":6.8,"wind_degree":194,"wind_dir":"SSW","pressure_mb":1013.0,"pressure_in":29.91,"precip_mm":0.0,"precip_in":0.0,"humidity":39,"cloud":3,"feelslike_c":13.6,"feelslike_f":56.5,"windchill_c":13.6,"windchill_f":56.5,"heatindex_c":13.7,"heatindex_f":56.7,"dewpoint_c":0.1,"dewpoint_f":32.2,"will_it_rain":0,"chance_of_rain":0,"will_it_snow":0,"chance_of_snow":0,"vis_km":10.0,"vis_miles":6.0,"gust_mph":7.6,"gust_kph":12.2,"uv":1.0}]}]}}'
-  recorded_at: Tue, 25 Apr 2023 17:05:32 GMT
+  recorded_at: Tue, 25 Apr 2023 16:56:11 GMT
 recorded_with: VCR 6.1.0
