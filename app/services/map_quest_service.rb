@@ -1,15 +1,19 @@
 class MapQuestService
-  def self.geocode(location)
+  def self.get_coordinates(location)
     response = conn.get("/geocoding/v1/address") do |req|
       req.params[:key] = ENV['MAP_QUEST_API_KEY']
       req.params[:location] = location
     end
-    parse_data(response)
+    parse_data(response)[:results][0][:locations][0][:latLng]
   end
 
-  def self.get_coordinates(location)
-    # require 'pry'; binding.pry
-    geocode(location)
+  def self.get_travel_time(origin, destination)
+    response = conn.get("/directions/v2/route") do |req|
+      req.params[:key] = ENV['MAP_QUEST_API_KEY']
+      req.params[:from] = origin
+      req.params[:to] = destination
+    end
+    parse_data(response)
   end
 
   private
@@ -19,6 +23,6 @@ class MapQuestService
   end
 
   def self.parse_data(response)
-    JSON.parse(response.body, symbolize_names: true)[:results][0][:locations][0][:latLng]
+    JSON.parse(response.body, symbolize_names: true)
   end
 end
