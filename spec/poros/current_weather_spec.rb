@@ -5,9 +5,9 @@ describe "CurrentWeather PORO", :vcr do
     location = "denver,co"
     forecast = ForecastFacade.get_forecast(location)
     current_weather = forecast.current_weather
-    # require 'pry'; binding.pry
+   
     expect(current_weather).to be_a(CurrentWeather)
-    expect(current_weather.datetime).to be nil
+    expect(current_weather.datetime).to be_a(String)
     expect(current_weather.temperature).to be_a(Float)
     expect(current_weather.feels_like).to be_a(Float)
     expect(current_weather.humidity).to be_a(Integer)
