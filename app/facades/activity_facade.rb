@@ -4,14 +4,12 @@ class ActivityFacade
     forecast = current_weather(location)
     all_activities = ActivityService.get_activities(forecast)
 
-    activities = all_activities.map do |activity|
-      require 'pry'; binding.pry
-      { activity: activity[:activity],
-        type: activity[:type],
-        participants: activity[:participants],
-        price: activity[:price] }
-    end
-    require 'pry'; binding.pry
+    activities =
+      { activity: all_activities[:activity],
+        type: all_activities[:type],
+        participants: all_activities[:participants],
+        price: all_activities[:price] }
+    # require 'pry'; binding.pry
   end
 
   def self.current_weather(location)
