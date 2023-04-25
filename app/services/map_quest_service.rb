@@ -12,16 +12,12 @@ class MapQuestService
     geocode(location)
   end
 
-  # NoMethodError:
-  # undefined method `get_travel_time' for #<MapQuestService:0x0000000112db8b58>
-
-  #     travel_time = MapQuestService.new.get_travel_time(origin, destination)
   def self.get_travel_time(origin, destination)
     response = conn.get("/directions/v2/route") do |req|
       req.params[:key] = ENV['MAP_QUEST_API_KEY']
       req.params[:from] = origin
       req.params[:to] = destination
-      require 'pry'; binding.pry
+
     end
     parse_data(response)
   end

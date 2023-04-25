@@ -1,7 +1,7 @@
 require "rails_helper"
 
-describe "Road Trip API" do
-  it "can get a roadtrip" do
+describe "Road Trip API", :vcr do
+  it "can get a road trip" do
     user = User.create!(email: "art@email.com", password: "password2", password_confirmation: "password2")
 
     body = {
@@ -11,7 +11,10 @@ describe "Road Trip API" do
     }
 
     post "/api/v0/road_trip", params: body.to_json, headers: { 'Content-Type': 'application/json' }
-
+    Failure/Error: render json: RoadTripSerializer.new(road_trip), status: 201
+     
+    #  NoMethodError:
+    #    undefined method `start_city' for #<RoadTrip:0x0000000112742f30 @id=nil, @type="roadtrip", @attributes={:start_city=>"salida, co", :end_city=>"denver, co", :travel_tim
     trip = JSON.parse(response.body, symbolize_names: true)
     require 'pry'; binding.pry
     expect(response).to be_successful

@@ -23,4 +23,10 @@ class ForecastFacade
     forecast = ForecastService.get_forecast(coordinates[:lat], coordinates[:lng])
     HourlyWeather.new(forecast)
   end
+
+  def self.get_weather_at_eta(destination, travel_time)
+    coordinates = MapQuestService.get_coordinates(destination)
+    forecast = ForecastService.get_forecast(coordinates[:lat], coordinates[:lng])
+    Forecast.new(forecast)
+  end
 end
