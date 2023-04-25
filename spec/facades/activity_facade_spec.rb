@@ -33,4 +33,13 @@ describe "Activity Facade", :vcr do
     expect(activity).to be_a(String)
     expect(activity).to_not be_empty
   end
+
+  it "can get a random cooking activity" do
+    destination = "denver,co"
+    activity = ActivityFacade.get_activities(destination)
+    activity = Activity.random_cooking_activity
+   
+    expect(activity).to be_a(String)
+    expect(activity).to_not be_empty
+  end
 end

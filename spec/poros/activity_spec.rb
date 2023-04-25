@@ -30,4 +30,22 @@ describe "Activity PORO", :vcr do
     expect(activity).to have_key(:price)
     expect(activity[:price]).to eq(0)
   end
+
+  it "can get a random recreational activity" do
+    destination = "denver,co"
+    activity = ActivityFacade.get_activities(destination)
+    activity = Activity.random_recreational_activity
+   
+    expect(activity).to be_a(String)
+    expect(activity).to_not be_empty
+  end
+
+  it "can get a random cooking activity" do
+    destination = "denver,co"
+    activity = ActivityFacade.get_activities(destination)
+    activity = Activity.random_cooking_activity
+   
+    expect(activity).to be_a(String)
+    expect(activity).to_not be_empty
+  end
 end
