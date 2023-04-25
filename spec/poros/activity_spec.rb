@@ -1,20 +1,16 @@
 require "rails_helper"
 
-describe "Activity PORO" do
+describe "Activity PORO", :vcr do
   it "exists and has attributes" do
-    data = {
-      "activity": "Go Bowling",
-      "type": "social",
-      "participants": 4,
-      "price": 0.5,
-    }
+    location = "denver,co"
+    forecast = ForecastFacade.current_weather(location)
 
-    activity = Activity.new(data)
-    require 'pry'; binding.pry
+    activity = Activity.new(location, forecast)
+    # require 'pry'; binding.pry
     expect(activity).to be_a(Activity)
-    expect(activity.activity).to be_a(String)
-    expect(activity.type).to be_a(String)
-    expect(activity.participants).to be_an(Integer)
-    expect(activity.price).to be_a(Float)
+    expect(activity.id).to eq(nil)
+    expect(activity.type).to eq("activities")
+    expect(activity.destination).to eq("denver,co")
+    expect(activity.forecast).to be(forecast)
   end
 end
