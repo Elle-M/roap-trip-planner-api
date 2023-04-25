@@ -27,4 +27,19 @@ describe "Forecast API" do
     expect(forecast[:data][:attributes]).to have_key(:hourly_weather)
     expect(forecast[:data][:attributes][:hourly_weather]).to be_an(Array)
   end
+
+  it "can't get forecast for a city with bad location", :vcr do
+
+    get "/api/v0/forecast?location="
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(400)
+    expect(response.content_type).to eq("application/json; charset=utf-8")
+
+    forecast = JSON.parse(response.body, symbolize_names: true)
+
+    expect(forecast).to be_a(Hash)
+    expect(forecast).to have_key(:error)
+    expect(forecast[:error]).to eq("Please provide a location")
+  end
 end  

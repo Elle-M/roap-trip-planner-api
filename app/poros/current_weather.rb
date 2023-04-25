@@ -9,7 +9,6 @@ class CurrentWeather
               :icon
 
   def initialize(location)
-    # return unless location.is_a?(Hash) && location.key?(:current)
     @datetime = location[:location][:localtime]
     @temperature = location[:current][:temp_f]
     @feels_like = location[:current][:feelslike_f]
