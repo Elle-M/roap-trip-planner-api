@@ -6,5 +6,10 @@ class ActivityFacade
     activities.map do |activity|
       # require 'pry'; binding.pry
     end
-  end
+  end  
+
+  # def self.get_activities(location)
+  #   forecast = ForecastFacade.current_weather(location)
+  #   ActivityService.get_activities(forecast)
+  # end
 end
