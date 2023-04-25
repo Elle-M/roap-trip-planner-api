@@ -11,7 +11,7 @@ describe "Road Trip API", :vcr do
     }
 
     post "/api/v0/road_trip", params: body.to_json, headers: { 'Content-Type': 'application/json' }
-    Failure/Error: render json: RoadTripSerializer.new(road_trip), status: 201
+    # Failure/Error: render json: RoadTripSerializer.new(road_trip), status: 201
      
     #  NoMethodError:
     #    undefined method `start_city' for #<RoadTrip:0x0000000112742f30 @id=nil, @type="roadtrip", @attributes={:start_city=>"salida, co", :end_city=>"denver, co", :travel_tim
