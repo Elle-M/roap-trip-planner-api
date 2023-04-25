@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe "Activity Service", :vcr do
   it "can get activities for a city" do
-    location = "denver,co"
-    forecast = ForecastFacade.current_weather(location)
+    destination = "denver,co"
+    forecast = ForecastFacade.current_weather(destination)
     activities = ActivityService.get_activities(forecast)
 
     expect(activities).to be_an(Hash)

@@ -1,7 +1,7 @@
 class ActivityFacade
 
- def self.get_activities(location)
-    forecast = current_weather(location)
+ def self.get_activities(destination)
+    forecast = current_weather(destination)
     all_activities = ActivityService.get_activities(forecast)
 
     activities =
@@ -9,11 +9,23 @@ class ActivityFacade
         type: all_activities[:type],
         participants: all_activities[:participants],
         price: all_activities[:price] }
+
+    if forecast[:temperature] >= 60
+      activities[:recreational] = Activity.random_recreational_activity
+    elsif forecast[:temperature] >= 50 && forecast[:temperature] < 60
+      activities[:busywork] = Activity.random_busywork_activity
+    else forecast[temperature] < 50 
+      activities[:cooking] = Activity.random_cooking_activity
+    end
+    activities[:relaxation] = Activity.random_relaxation_activity
+    activities
     # require 'pry'; binding.pry
   end
 
-  def self.current_weather(location)
-    coordinates = MapQuestService.get_coordinates(location)
+  
+
+  def self.current_weather(destination)
+    coordinates = MapQuestService.get_coordinates(destination)
     forecast = ForecastService.get_forecast(coordinates[:lat], coordinates[:lng])
     weather_data = CurrentWeather.new(forecast)
 

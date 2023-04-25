@@ -2,15 +2,32 @@ require "rails_helper"
 
 describe "Activity PORO", :vcr do
   it "exists and has attributes" do
-    location = "denver,co"
-    forecast = ActivityFacade.current_weather(location)
+    destination = "denver,co"
+    forecast = ActivityFacade.current_weather(destination)
 
-    activity = Activity.new(location, forecast)
+    activity = Activity.new(destination, forecast)
     # require 'pry'; binding.pry
     expect(activity).to be_a(Activity)
     expect(activity.id).to eq(nil)
     expect(activity.type).to eq("activities")
     expect(activity.destination).to eq("denver,co")
     expect(activity.forecast).to be(forecast)
+  end
+
+  it "can get activities for a city" do
+    destination = "denver,co"
+    forecast = ActivityFacade.current_weather(destination)
+    activity = Activity.new(destination, forecast)
+    activity = activity.get_activities
+
+    expect(activity).to be_an(Hash)
+    expect(activity).to have_key(:activity)
+    expect(activity[:activity]).to be_a(String)
+    expect(activity).to have_key(:type)
+    expect(activity[:type]).to be_a(String)
+    expect(activity).to have_key(:participants)
+    expect(activity[:type]).to be_a(String)
+    expect(activity).to have_key(:price)
+    expect(activity[:price]).to eq(0)
   end
 end
