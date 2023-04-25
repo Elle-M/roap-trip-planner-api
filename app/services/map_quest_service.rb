@@ -1,5 +1,5 @@
 class MapQuestService
-  def self.geocode(location)
+  def self.get_coordinates(location)
     response = conn.get("/geocoding/v1/address") do |req|
       req.params[:key] = ENV['MAP_QUEST_API_KEY']
       req.params[:location] = location
@@ -7,17 +7,11 @@ class MapQuestService
     parse_data(response)[:results][0][:locations][0][:latLng]
   end
 
-  def self.get_coordinates(location)
-    # require 'pry'; binding.pry
-    geocode(location)
-  end
-
   def self.get_travel_time(origin, destination)
     response = conn.get("/directions/v2/route") do |req|
       req.params[:key] = ENV['MAP_QUEST_API_KEY']
       req.params[:from] = origin
       req.params[:to] = destination
-
     end
     parse_data(response)
   end

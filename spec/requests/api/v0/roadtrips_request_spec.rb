@@ -18,9 +18,25 @@ describe "Road Trip API", :vcr do
     expect(response.status).to eq(201)
     expect(trip[:data][:attributes][:start_city]).to eq("salida, co")
     expect(trip[:data][:attributes][:end_city]).to eq("denver, co")
-    expect(trip[:data][:attributes][:travel_time][:route][:formattedTime]).to be_a(String)
+    expect(trip[:data][:attributes][:travel_time]).to be_a(String)
     expect(trip[:data][:attributes][:weather_at_eta]).to be_a(Hash)
-    expect(trip[:data][:attributes][:weather_at_eta][:current_weather][:temperature]).to be_a(Float)
-    expect(trip[:data][:attributes][:weather_at_eta][:current_weather][:condition]).to be_a(String)
+    expect(trip[:data][:attributes][:weather_at_eta][:temperature]).to be_a(Float)
+    expect(trip[:data][:attributes][:weather_at_eta][:condition]).to be_a(String)
+  end
+
+  it "can't get a road trip with bad api key", :vcr do
+    body = {
+      "origin": "salida, co",
+      "destination": "denver, co",
+      "api_key": "bad_key"
+    }
+
+    post "/api/v0/road_trip", params: body.to_json, headers: { 'Content-Type': 'application/json' }
+   
+    trip = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(401)
+    expect(trip[:error]).to eq("Invalid credentials")
   end
 end    
