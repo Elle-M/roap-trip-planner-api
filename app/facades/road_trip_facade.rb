@@ -10,6 +10,10 @@ class RoadTripFacade
       temperature: weather_at_eta.temperature
     }
 
+    if travel_time == nil
+      { error: "Impossible route" }
+    else
     RoadTrip.new(origin, destination, travel_time, weather_at_eta)
+    end
   end
 end
