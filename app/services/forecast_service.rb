@@ -6,7 +6,7 @@ class ForecastService
       req.params[:q] = "#{lat},#{lng}"
       req.params[:days] = 5
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parse_data(response)
   end
 
   def self.weather_at_eta(origin, destination)
@@ -15,12 +15,16 @@ class ForecastService
       req.params[:q] = destination
       req.params[:days] = 5
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parse_data(response)
   end
 
   private
 
   def self.conn
     Faraday.new(url: "https://api.weatherapi.com/")
+  end
+
+  def self.parse_data(response)
+    JSON.parse(response.body, symbolize_names: true)
   end
 end

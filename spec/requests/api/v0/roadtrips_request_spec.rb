@@ -1,13 +1,15 @@
 require "rails_helper"
 
 describe "Road Trip API", :vcr do
-  it "can get a road trip" do
-    user = User.create!(email: "art@email.com", password: "password2", password_confirmation: "password2")
+  before :each do
+    @user = User.create!(email: "art@email.com", password: "password2", password_confirmation: "password2")
+  end
 
+  it "can get a road trip" do
     body = {
       "origin": "salida, co",
       "destination": "denver, co",
-      "api_key": "#{user.api_key}"
+      "api_key": "#{@user.api_key}"
     }
 
     post "/api/v0/road_trip", params: body.to_json, headers: { 'Content-Type': 'application/json' }
@@ -29,6 +31,21 @@ describe "Road Trip API", :vcr do
       "origin": "salida, co",
       "destination": "denver, co",
       "api_key": "bad_key"
+    }
+
+    post "/api/v0/road_trip", params: body.to_json, headers: { 'Content-Type': 'application/json' }
+   
+    trip = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to_not be_successful
+    expect(response.status).to eq(401)
+    expect(trip[:error]).to eq("Invalid credentials")
+  end
+
+  it "can't get a road trip with missing api key", :vcr do
+    body = {
+      "origin": "salida, co",
+      "destination": "denver, co"
     }
 
     post "/api/v0/road_trip", params: body.to_json, headers: { 'Content-Type': 'application/json' }
