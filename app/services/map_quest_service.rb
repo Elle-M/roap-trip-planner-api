@@ -1,4 +1,5 @@
 class MapQuestService
+  
   def self.get_coordinates(location)
     response = conn.get("/geocoding/v1/address") do |req|
       req.params[:key] = ENV['MAP_QUEST_API_KEY']

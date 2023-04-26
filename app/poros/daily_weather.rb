@@ -1,4 +1,5 @@
 class DailyWeather
+  
   attr_reader :date,
               :sunrise, 
               :sunset,

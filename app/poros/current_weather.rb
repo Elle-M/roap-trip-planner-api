@@ -1,4 +1,5 @@
 class CurrentWeather
+  
   attr_reader :datetime,
               :temperature,
               :feels_like,

@@ -1,4 +1,5 @@
 class Forecast  
+  
   attr_reader :id,
               :type,
               :current_weather,

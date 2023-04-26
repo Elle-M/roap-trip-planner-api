@@ -1,4 +1,5 @@
 class RoadTrip
+  
   attr_reader :id,
               :type,
               :start_city,

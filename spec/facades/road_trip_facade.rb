@@ -1,7 +1,7 @@
 require "rails_helper"
 
-describe "Road Trip Facade" do
-  it "can create a road trip", :vcr do
+describe "Road Trip Facade", :vcr do
+  it "can create a road trip"do
     origin = "denver,co"
     destination = "salida,co"
     road_trip = RoadTripFacade.create_road_trip(origin, destination)
@@ -15,7 +15,7 @@ describe "Road Trip Facade" do
     expect(road_trip.weather_at_eta[:condition]).to be_a(String)
   end
 
-  it "can't create a road trip with impossible route", :vcr do
+  it "can't create a road trip with impossible route" do
     origin = "denver,co"
     destination = "london,uk"
     road_trip = RoadTripFacade.create_road_trip(origin, destination)

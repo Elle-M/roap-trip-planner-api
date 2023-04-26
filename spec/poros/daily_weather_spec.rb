@@ -5,7 +5,7 @@ describe "DailyWeather PORO", :vcr do
     location = "denver,co"
     forecast = ForecastFacade.get_forecast(location)
     daily_weather = forecast.daily_weather.first
-    # require 'pry'; binding.pry
+  
     expect(daily_weather).to be_a(DailyWeather)
     expect(daily_weather.date).to be_a(String)
     expect(daily_weather.sunrise).to be_a(String)
